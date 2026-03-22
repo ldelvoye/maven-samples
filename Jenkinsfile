@@ -11,7 +11,19 @@ pipeline {
       }
     }
 
-    stage('run') {
+    stage('mvn clean') {
+      steps {
+        bat 'mvn clean'
+      }
+    }
+
+    stage('mvn test') {
+      steps {
+        bat 'mvn test'
+      }
+    }
+
+    stage('mvn verify') {
       steps {
         bat 'mvn verify'
       }
